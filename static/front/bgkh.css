@@ -1,0 +1,25 @@
+.cerah {
+  background-image: url("images/cerahcuy.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.awan {
+  background-image: url("images/awancoy.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+}
+.hujan {
+  background-image: url("images/hujan.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+}
+.badai {
+  background-image: url("images/thundercoy.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+}

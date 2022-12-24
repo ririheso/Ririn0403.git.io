@@ -1,0 +1,25 @@
+{% extends 'front/baseDefault.html' %} {% load static %} {% block konten %}
+<div class="container">
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>{{info}}</span>
+  </div>
+</div>
+<div class="fullwidth-block">
+  <div class="container">
+    <div class="row">
+      <div class="content col-md-8">
+        <div class="post single">
+          <h2 class="entry-title">{{artikelku.Judul}}</h2>
+          <div class="featured-image">
+            <img src="{{artikelku.gambar}}" alt="" />
+          </div>
+
+          <div class="entry-content">{{artikelku.isiArtikel | safe}}</div>
+        </div>
+      </div>
+      <div class="sidebar col-md-3 col-md-offset-1"></div>
+    </div>
+  </div>
+</div>
+{% endblock konten %}

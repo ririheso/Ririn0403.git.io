@@ -1,0 +1,185 @@
+{% extends 'back/baseBack.html' %} {% load static %} {% block konten %}
+<h3 class="text-center fw-bold">DAILY TASK</h3>
+<div class="row">
+  <div class="col-lg-3 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-5">
+            <div class="icon-big text-center icon-warning">
+              <i class="nc-icon nc-chart text-warning"></i>
+            </div>
+          </div>
+          <div class="col-7">
+            <div class="numbers">
+              <p class="card-category">Make</p>
+              <h4 class="card-title">Artikel</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-5">
+            <div class="icon-big text-center icon-warning">
+              <i class="nc-icon nc-light-3 text-success"></i>
+            </div>
+          </div>
+          <div class="col-7">
+            <div class="numbers">
+              <p class="card-category">Search</p>
+              <h4 class="card-title">Information</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-5">
+            <div class="icon-big text-center icon-warning">
+              <i class="nc-icon nc-vector text-danger"></i>
+            </div>
+          </div>
+          <div class="col-7">
+            <div class="numbers">
+              <p class="card-category">Check</p>
+              <h4 class="card-title">Co-Admin</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-5">
+            <div class="icon-big text-center icon-warning">
+              <i class="nc-icon nc-favourite-28 text-primary"></i>
+            </div>
+          </div>
+          <div class="col-7">
+            <div class="numbers">
+              <p class="card-category">Post</p>
+              <h4 class="card-title">Artikels</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    {% if request.session.is_direktur == 'direktur' %}
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Daftar Nama Admin & Co-Admin</h4>
+        <p class="card-category">
+          Segala hak akses yang ada akan terlampir di bawah.
+        </p>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-7">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <th>Username</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Email</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </thead>
+                <tbody>
+                  {% for u in users %}
+                  <tr>
+                    <td>{{u.username}}</td>
+                    <td class="">{{u.first_name}}</td>
+                    <td class="">{{u.last_name}}</td>
+                    <td class="">{{u.email}}</td>
+                    {% if u.is_staff %}
+                    <td class="">admin</td>
+                    {% else %}
+                    <td class="">co-admin</td>
+                    {% endif %}
+                    <td class="td-actions">
+                      <button
+                        type="button"
+                        rel="tooltip"
+                        data-placement="left"
+                        title="Edit Post"
+                        class="btn btn-success btn-link btn-icon"
+                      >
+                        <a href="{% url 'edituser' u.id %}"
+                          ><i class="fa fa-edit text-success"></i
+                        ></a>
+                      </button>
+                      <button
+                        type="button"
+                        rel="tooltip"
+                        data-placement="left"
+                        title="Remove Post"
+                        class="btn btn-danger btn-link btn-icon"
+                      >
+                        <a href="{% url 'hapususer' u.id %}"
+                          ><i class="fa fa-times text-danger"></i
+                        ></a>
+                      </button>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-md-5 ml-auto mr-auto">
+            <div>
+              <img
+                src="{% static 'back/img/work.gif' %}"
+                alt=""
+                style="width: 400px"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">SELAMAT DATANG DI HALAMAN DASHBOARD</h4>
+        <p class="card-category">
+          Silahkan upload artikel sesuai dengan jobdesk anda!
+        </p>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-7"><h1>Selamat Beraktifitas</h1></div>
+          <div class="col-md-5 ml-auto mr-auto">
+            <div>
+              <img
+                src="{% static 'back/img/work.gif' %}"
+                alt=""
+                style="width: 450px"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock konten %}

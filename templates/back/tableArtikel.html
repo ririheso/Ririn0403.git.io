@@ -1,0 +1,78 @@
+{% extends 'back/baseBack.html' %} {% load static %} {% block konten %}
+<div class="row">
+  <div class="col-md-12">
+    <div class="card table-big-boy">
+      <div class="card-header">
+        <h4 class="card-title">Table Artikel</h4>
+        <p class="card-category">Kumpulan Artikel</p>
+        <br />
+      </div>
+      <div class="card-body table-full-width">
+        <table class="table table-bigboy">
+          <thead>
+            <tr>
+              <th class="text-center">Thumb</th>
+              <th>Blog Title</th>
+              <th class="th-description">Description</th>
+              <th class="text-right">Date</th>
+              <th class="text-right">Writer</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for d in display %}
+
+            <tr>
+              <td>
+                <div class="img-container">
+                  <img src="{{d.gambar}}" alt="..." />
+                </div>
+              </td>
+              <td class="td-name">{{d.Judul}}</td>
+              <td>
+                <div
+                  style="
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                  "
+                >
+                  <p>{{d.isiArtikel | safe}}</p>
+                </div>
+              </td>
+              <td class="td-number">{{d.date}}</td>
+              <td class="td-number">{{d.penulis}}</td>
+              <td class="td-actions">
+                <button
+                  type="button"
+                  rel="tooltip"
+                  data-placement="left"
+                  title="Edit Post"
+                  class="btn btn-success btn-link btn-icon"
+                >
+                  <a href="{% url 'editArtikel' d.id %}"
+                    ><i class="fa fa-edit text-success"></i
+                  ></a>
+                </button>
+                <button
+                  type="button"
+                  rel="tooltip"
+                  data-placement="left"
+                  title="Remove Post"
+                  class="btn btn-danger btn-link btn-icon"
+                >
+                  <a href="{% url 'deleteArtikel' d.id %}"
+                    ><i class="fa fa-times text-danger"></i
+                  ></a>
+                </button>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock konten %}

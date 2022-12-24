@@ -1,0 +1,50 @@
+{% extends 'front/baseDefault.html' %} {% load static %} {% block konten %}
+<div class="container">
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>{{info}}</span>
+  </div>
+</div>
+
+<div class="fullwidth-block">
+  <div class="container">
+    <div class="row">
+      <div class="content col-md-8">
+        {% for a in artikelku %}
+        <div class="post">
+          <h2 class="entry-title">{{a.Judul}}</h2>
+          <div class="featured-image">
+            <img
+              src="{{a.gambar}}"
+              alt=""
+              style="
+                width: 750px;
+                object-fit: cover;
+                object-position: center;
+                max-height: 300px;
+              "
+            />
+          </div>
+          <div
+            style="
+              display: -webkit-box;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+            "
+          >
+            <p>{{a.isiArtikel | safe}}</p>
+          </div>
+          <div class="mt-4">
+            <a href="{% url 'detailArtikel' a.id %}" class="button"
+              >Read more</a
+            >
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="sidebar col-md-3 col-md-offset-1"></div>
+    </div>
+  </div>
+</div>
+{% endblock konten %}

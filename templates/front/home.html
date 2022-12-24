@@ -1,0 +1,1164 @@
+{% extends 'front/baseFront.html' %} {% load static %} {% block cuaca %}
+<div class="forecast-table">
+  <div class="container">
+    <div class="forecast-container">
+      <h1 class="text-center fs-1">Weather Of Kalimantan Timur</h1>
+      <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+        {% if weather1 == "Clouds" %}
+
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/cloudy.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota1.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather1}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp1}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin1}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax1}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% elif weather1 == "Clear" %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/day.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota1.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather1}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp1}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin1}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax1}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% elif weather1 == "Rain" %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/rainy-1.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota1.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather1}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp1}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin1}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax1}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% elif weather1 == "Thunderstorm" %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/thunder.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota1.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather1}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp1}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin1}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax1}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% else %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/thunder.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota1.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather1}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp1}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin1}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax1}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %} {% if weather2 == "Clouds" %}
+
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/cloudy.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota2.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather2}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp2}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin2}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax2}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% elif weather2 == "Clear" %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/day.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota2.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather2}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp2}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin2}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax2}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% elif weather2 == "Rain" %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/rainy-1.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota2.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather2}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp2}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin2}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax2}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% elif weather2 == "Thunderstorm" %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/thunder.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota2.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather2}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp2}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin2}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax2}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% else %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/thunder.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota2.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather2}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp2}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin2}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax2}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %} {% if weather3 == "Clouds" %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/cloudy.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota3.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather3}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp3}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin3}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax3}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% elif weather3 == "Clear" %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/day.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota3.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather3}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp3}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin3}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax3}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% elif weather3 == "Rain" %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/rainy-1.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota3.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather3}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp3}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin3}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax3}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% elif weather3 == "Thunderstorm" %}
+
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/thunder.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota3.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather3}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp3}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin3}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax3}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% else %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/thunder.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota3.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather3}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp3}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin3}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax3}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %} {% if weather4 == "Clouds" %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/cloudy.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota4.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather4}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp4}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin4}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax4}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% elif weather4 == "Clear" %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/day.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota4.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather4}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp4}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin4}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax4}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% elif weather4 == "Rain" %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/rainy-1.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota4.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather4}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp4}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin4}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax4}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% elif weather4 == "Thunderstorm" %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/thunder.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota4.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather4}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp4}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin4}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax4}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% else %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/thunder.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota4.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather4}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp4}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin4}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax4}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %} {% if weather5 == "Clouds" %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/cloudy.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota5.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather5}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp5}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin5}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax5}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% elif weather5 == "Clear" %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/day.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota5.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather5}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp5}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin5}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax5}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% elif weather5 == "Rain" %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/rainy-1.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota5.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather5}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp5}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin5}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax5}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% elif weather5 == "Thunderstorm" %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/thunder.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota5.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather5}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp5}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin5}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax5}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% else %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/thunder.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota5.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather5}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp5}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin5}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax5}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %} {% if weather6 == "Clouds" %}
+
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/cloudy.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota6.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather6}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp6}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin6}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax6}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% elif weather6 == "Clear" %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/day.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota6.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather6}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp6}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin6}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax6}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% elif weather6 == "Rain" %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/rainy-1.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota6.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather6}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp6}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin6}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax6}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% elif weather6 == "Thunderstorm" %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/thunder.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota6.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather6}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp6}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin6}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax6}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% else %}
+        <div class="col">
+          <div class="card align-items-center p-5 bg-dark">
+            <div class="">
+              <img
+                src="{% static 'front/images/icon2/animated/thunder.svg' %}"
+                class="card-img-top"
+                style="width: 200px; height: 200px"
+                alt="..."
+              />
+            </div>
+            <div class="card-body col-lg-6">
+              <h6 class="card-title fs-5 mb-3 text-center">{{kota6.name}}</h6>
+              <div class="text-center">
+                <div>
+                  <div class="align-items-center justify-content-center">
+                    <ul class="text-center" style="list-style-type: none">
+                      <li class="text-center">
+                        <p class="fw-semibold">Cuaca : {{weather6}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Temp : {{temp6}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Min : {{tmin6}}</p>
+                      </li>
+                      <li class="text-center">
+                        <p class="fw-semibold">Max : {{tmax6}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock cuaca %} {% block konten %}
+<div class="fullwidth-block">
+  <div class="container">
+    <h2 class="section-title">CCTV Samarinda</h2>
+    <div class="row">
+      <div class="col-md-3 col-sm-6">
+        <div class="live-camera">
+          <figure class="live-camera-cover">
+            <a
+              href="https://diskominfo.samarindakota.go.id/api/cctv/simpang-antasari-siradj-salman"
+              target="blank"
+              ><img
+                src="{% static 'front/images/antasari.jpg' %}"
+                alt=""
+                style="height: 150px"
+            /></a>
+          </figure>
+          <h3 class="location">Simpang Antasari</h3>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="live-camera">
+          <figure class="live-camera-cover">
+            <a
+              href="https://diskominfo.samarindakota.go.id/api/cctv/pasar-segiri"
+              target="blank"
+              ><img
+                src="{% static 'front/images/segiri.jpeg' %}"
+                alt=""
+                style="height: 150px"
+            /></a>
+          </figure>
+          <h3 class="location">Pasar Segiri</h3>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="live-camera">
+          <figure class="live-camera-cover">
+            <a
+              href="https://diskominfo.samarindakota.go.id/api/cctv/simpang-jalan-anggur"
+              target="blank"
+              ><img
+                src="{% static 'front/images/anggur.jpg' %}"
+                alt=""
+                style="height: 150px"
+            /></a>
+          </figure>
+          <h3 class="location">Simpang Jalan Anggur</h3>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="live-camera">
+          <figure class="live-camera-cover">
+            <a
+              href="https://diskominfo.samarindakota.go.id/api/cctv/simpang-rapak-indah"
+              target="blank"
+              ><img
+                src="{% static 'front/images/rapak.jpeg' %}"
+                style="height: 150px"
+                alt=""
+            /></a>
+          </figure>
+          <h3 class="location">Rapak Indah</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock konten %}

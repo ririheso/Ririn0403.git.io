@@ -1,0 +1,197 @@
+{% extends 'front/baseDefault.html' %} {% load static %} {% block konten %}
+<div class="container">
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>{{info}}</span>
+  </div>
+</div>
+<div class="container mt-5 mb-5">
+  <form method="post" class="find-location">
+    {% csrf_token %}
+    <input
+      type="text"
+      placeholder="Check weather in a city or country..."
+      class="bg-light text-dark"
+      name="cuaca"
+    />
+    <input type="submit" value="Find" />
+  </form>
+  {% for d in data %}
+
+  <div class="card text-left bg-dark">
+    {% if d.cuaca == "Clear" %}
+    <div class="card-body d-flex">
+      <div>
+        <h1 class="card-title">{{d.country}}, {{d.symbol_country}}</h1>
+
+        <div class="d-flex flex-row mb-3">
+          <h2 class="border rounded-pill px-3 py-1 bg-light text-dark fw-bold">
+            {{d.temp}}°C
+          </h2>
+        </div>
+        <h2 class="fw-semibold">Tmax : {{d.tmax}}°C & Tmin : {{d.tmin}}°C</h2>
+        <h2 class="fw-semibold">Wind Speed : {{d.wind}} m/s</h2>
+        <h2 class="fw-semibold">Clouds : {{d.cloud}}%</h2>
+        <h2 class="fw-semibold">Geo Coordinates : [{{d.lon}}, {{d.lat}}]</h2>
+
+        <div>
+          <img
+            src="{% static 'front/images/icon2/animated/day.svg' %}"
+            class="card-img-top"
+            style="width: 150px"
+            alt="..."
+          />
+        </div>
+
+        <div class="d-inline-flex">
+          <h2 class="border rounded-pill px-3 py-1 bg-light text-dark fw-bold">
+            {{d.cuaca}}
+          </h2>
+        </div>
+      </div>
+      <div class="mx-5 cerah">
+        <div style="width: 600px"></div>
+      </div>
+    </div>
+    {% elif d.cuaca == "Clouds" %}
+    <div class="card-body d-flex">
+      <div>
+        <h1 class="card-title">{{d.country}}, {{d.symbol_country}}</h1>
+
+        <div class="d-flex flex-row mb-3">
+          <h2 class="border rounded-pill px-3 py-1 bg-light text-dark fw-bold">
+            {{d.temp}}°C
+          </h2>
+        </div>
+        <h2 class="fw-semibold">Tmax : {{d.tmax}}°C & Tmin : {{d.tmin}}°C</h2>
+        <h2 class="fw-semibold">Wind Speed : {{d.wind}} m/s</h2>
+        <h2 class="fw-semibold">Clouds : {{d.cloud}}%</h2>
+        <h2 class="fw-semibold">Geo Coordinates : [{{d.lon}}, {{d.lat}}]</h2>
+
+        <div>
+          <img
+            src="{% static 'front/images/icon2/animated/day.svg' %}"
+            class="card-img-top"
+            style="width: 150px"
+            alt="..."
+          />
+        </div>
+
+        <div class="d-inline-flex">
+          <h2 class="border rounded-pill px-3 py-1 bg-light text-dark fw-bold">
+            {{d.cuaca}}
+          </h2>
+        </div>
+      </div>
+      <div class="mx-5 cerah">
+        <div style="width: 600px"></div>
+      </div>
+    </div>
+    {% elif d.cuaca == "Rain" %}
+    <div class="card-body d-flex">
+      <div>
+        <h1 class="card-title">{{d.country}}, {{d.symbol_country}}</h1>
+
+        <div class="d-flex flex-row mb-3">
+          <h2 class="border rounded-pill px-3 py-1 bg-light text-dark fw-bold">
+            {{d.temp}}°C
+          </h2>
+        </div>
+        <h2 class="fw-semibold">Tmax : {{d.tmax}}°C & Tmin : {{d.tmin}}°C</h2>
+        <h2 class="fw-semibold">Wind Speed : {{d.wind}} m/s</h2>
+        <h2 class="fw-semibold">Clouds : {{d.cloud}}%</h2>
+        <h2 class="fw-semibold">Geo Coordinates : [{{d.lon}}, {{d.lat}}]</h2>
+
+        <div>
+          <img
+            src="{% static 'front/images/icon2/animated/day.svg' %}"
+            class="card-img-top"
+            style="width: 150px"
+            alt="..."
+          />
+        </div>
+
+        <div class="d-inline-flex">
+          <h2 class="border rounded-pill px-3 py-1 bg-light text-dark fw-bold">
+            {{d.cuaca}}
+          </h2>
+        </div>
+      </div>
+      <div class="mx-5 cerah">
+        <div style="width: 600px"></div>
+      </div>
+    </div>
+    {% elif d.cuaca == "Thunderstorm" %}
+    <div class="card-body d-flex">
+      <div>
+        <h1 class="card-title">{{d.country}}, {{d.symbol_country}}</h1>
+
+        <div class="d-flex flex-row mb-3">
+          <h2 class="border rounded-pill px-3 py-1 bg-light text-dark fw-bold">
+            {{d.temp}}°C
+          </h2>
+        </div>
+        <h2 class="fw-semibold">Tmax : {{d.tmax}}°C & Tmin : {{d.tmin}}°C</h2>
+        <h2 class="fw-semibold">Wind Speed : {{d.wind}} m/s</h2>
+        <h2 class="fw-semibold">Clouds : {{d.cloud}}%</h2>
+        <h2 class="fw-semibold">Geo Coordinates : [{{d.lon}}, {{d.lat}}]</h2>
+
+        <div>
+          <img
+            src="{% static 'front/images/icon2/animated/day.svg' %}"
+            class="card-img-top"
+            style="width: 150px"
+            alt="..."
+          />
+        </div>
+
+        <div class="d-inline-flex">
+          <h2 class="border rounded-pill px-3 py-1 bg-light text-dark fw-bold">
+            {{d.cuaca}}
+          </h2>
+        </div>
+      </div>
+      <div class="mx-5 cerah">
+        <div style="width: 600px"></div>
+      </div>
+    </div>
+    {% else %}
+    <div class="card-body d-flex">
+      <div>
+        <h1 class="card-title">{{data.country}}, {{data.symbol_country}}</h1>
+
+        <div class="d-flex flex-row mb-3">
+          <h2 class="border rounded-pill px-3 py-1 bg-light text-dark fw-bold">
+            {{data.temp}}°C
+          </h2>
+        </div>
+        <h2 class="fw-semibold">Tmax : {{data.tmax}}°C & Tmin : {{tmax}}°C</h2>
+        <h2 class="fw-semibold">Wind Speed : {{data.wind}} m/s</h2>
+        <h2 class="fw-semibold">Clouds : {{data.cloud}}%</h2>
+        <h2 class="fw-semibold">
+          Geo Coordinates : [{{data.lon}}, {{data.lat}}]
+        </h2>
+
+        <div>
+          <img
+            src="{% static 'front/images/icon2/animated/day.svg' %}"
+            class="card-img-top"
+            style="width: 150px"
+            alt="..."
+          />
+        </div>
+
+        <div class="d-inline-flex">
+          <h2 class="border rounded-pill px-3 py-1 bg-light text-dark fw-bold">
+            {{data.cuaca}}
+          </h2>
+        </div>
+      </div>
+      <div class="mx-5 cerah">
+        <div style="width: 600px"></div>
+      </div>
+    </div>
+    {% endif %} {% endfor %}
+  </div>
+</div>
+{% endblock konten %}

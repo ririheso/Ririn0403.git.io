@@ -1,0 +1,70 @@
+{% extends 'back/baseBack.html' %} {% load static %} {% block konten %}
+<div class="col-md-12">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title">Form Elements</h4>
+    </div>
+    <div class="card-body">
+      <form method="post" class="form-horizontal" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset>
+          <div class="form-group">
+            <div class="row">
+              <label class="col-sm-2 control-label">Judul Artikel</label>
+              <div class="col-sm-10">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="judul"
+                  value="{{view.Judul}}"
+                  placeholder="Title is here"
+                />
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div class="form-group">
+            <div class="row">
+              <label class="col-sm-2 control-label">Konten</label>
+              <div class="col-sm-10">
+                <textarea
+                  name="konten1"
+                  id="konten1"
+                  cols="30"
+                  rows="10"
+                  class="form-control"
+                  placeholder="Content is here"
+                >
+{{view.isiArtikel}}</textarea
+                >
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div class="form-group">
+            <div class="row">
+              <label class="col-sm-2 control-label">Gambar</label>
+              <div class="col-sm-10">
+                <input
+                  type="file"
+                  value="{{view.gambar}}"
+                  name="gambarku"
+                  placeholder="Disabled input here..."
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <div class="card-footer" style="float: right">
+          <button type="submit" class="btn btn-fill btn-info">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock konten %}
